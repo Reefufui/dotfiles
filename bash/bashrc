@@ -1,0 +1,36 @@
+# User info
+export USERNAME="Treefonov Andrey"
+export NICKNAME="Reefufui"
+
+# Default choice TODO nvim -> vim
+export VISUAL=nvim
+export EDITOR=nvim
+
+# Paths
+export DOTFILES=~/dotfiles #TODO REMOVE
+
+# Aliases
+alias ls='exa --icons --all'
+alias la='exa --icons --all -l'
+alias tree='exa --icons --tree'
+alias tree2='exa --icons --tree --level=2'
+alias tree3='exa --icons --tree --level=3'
+
+export STARSHIP_CONFIG=~/.config/starship/config.toml
+export STARSHIP_CACHE=~/.cache/starship/cache
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
+
+# Python dev paths
+export PATH=/home/reefufui/.local/bin:$PATH
+export PYTHONPATH=/usr/bin/python
+
+# Vulkan dev paths
+export VULKAN_SDK=~/vulkan/1.2.189.0/x86_64
+export PATH=$VULKAN_SDK/bin:$PATH
+export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
+export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
+
+# Rust env vars
+. "$HOME/.cargo/env"
+
