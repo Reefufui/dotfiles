@@ -1,0 +1,61 @@
+env:
+  TERM: xterm-256color
+
+import:
+#  - ~/.config/alacritty/alacritty-theme/themes/gruvbox_material.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+draw_bold_text_with_bright_colors: true
+
+window:
+  padding:
+    x: 10
+    y: 10
+  decorations: none
+  opacity: 1.0
+
+font:
+  normal:
+    family: monospace
+    style: Bold
+  bold:
+    family: monospace
+    style: Regular
+  italic:
+    family: monospace
+    style: Bold Italic
+  bold_italic:
+    family: monospace
+    style: Regular Italic
+
+  size: 13.4
+
+bell:
+  animation: EaseOutSine
+  duration: 200
+  color: '#aaaaaa'
+
+    # TODO: notification on bell
+  #command:
+  #     program: ...
+  #     args: ["Meh"]
+
+cursor:
+  style:
+    shape: Underline
+    blinking: On
+  blink_interval: 130
+  blink_timeout: 0
+  unfocused_hollow: false
+  thickness: 0.30
+
+shell:
+  program: /bin/bash
+  args:
+    - --login
+
+mouse:
+  hide_when_typing: true
+
