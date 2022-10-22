@@ -2,7 +2,6 @@ env:
   TERM: xterm-256color
 
 import:
-#  - ~/.config/alacritty/alacritty-theme/themes/gruvbox_material.yml
 #  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 #  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
   - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
@@ -18,16 +17,16 @@ window:
 
 font:
   normal:
-    family: monospace
+    family: Roboto Mono
     style: Regular
   bold:
-    family: monospace
+    family: Roboto Mono
     style: Bold
   italic:
-    family: monospace
+    family: Roboto Mono
     style: Regular Italic
   bold_italic:
-    family: monospace
+    family: Roboto Mono
     style: Bold Italic
 
   size: 13.4
