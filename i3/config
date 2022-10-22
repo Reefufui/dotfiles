@@ -87,9 +87,12 @@ for_window [class="qView"] floating enable
 for_window [class="Steam"] floating enable
 
 for_window [class="^.*"] border pixel 0
-gaps inner 12
+# gaps requires https://github.com/Airblader/i3
+gaps inner 10
 gaps outer 0
 smart_gaps inverse_outer
+# border_radius requires https://github.com/resloved/i3
+border_radius 20
 
 exec_always --no-startup-id --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom --experimental-backends

@@ -19,16 +19,16 @@ window:
 font:
   normal:
     family: monospace
-    style: Bold
+    style: Regular
   bold:
     family: monospace
-    style: Regular
+    style: Bold
   italic:
     family: monospace
-    style: Bold Italic
+    style: Regular Italic
   bold_italic:
     family: monospace
-    style: Regular Italic
+    style: Bold Italic
 
   size: 13.4
 
