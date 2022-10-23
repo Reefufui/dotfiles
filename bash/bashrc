@@ -6,9 +6,6 @@ export NICKNAME="Reefufui"
 export VISUAL=nvim
 export EDITOR=nvim
 
-# Paths
-export DOTFILES=~/dotfiles #TODO REMOVE
-
 # Aliases
 alias ls='exa --icons --all'
 alias la='exa --icons --all -l'
