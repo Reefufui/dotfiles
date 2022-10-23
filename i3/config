@@ -97,5 +97,5 @@ border_radius 20
 exec_always --no-startup-id --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom --experimental-backends
 exec_always --no-startup-id dunst
-exec_always --no-startup-id startpolybar
+exec_always --no-startup-id ~/.config/polybar/startpolybar
 

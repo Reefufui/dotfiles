@@ -2,9 +2,9 @@ env:
   TERM: xterm-256color
 
 import:
-#  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 #  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
-  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
 #  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
 draw_bold_text_with_bright_colors: true
 
@@ -36,10 +36,9 @@ bell:
   duration: 200
   color: '#aaaaaa'
 
-    # TODO: notification on bell
-  #command:
-  #     program: ...
-  #     args: ["Meh"]
+  command:
+    program: notify-send
+    args: ["NYAAAGOOOOO"]
 
 cursor:
   style:
