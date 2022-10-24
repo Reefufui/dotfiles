@@ -18,6 +18,9 @@ export STARSHIP_CACHE=~/.cache/starship/cache
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
+# My scripts path
+export PATH=/home/reefufui/.scripts:$PATH
+
 # Python dev paths
 export PATH=/home/reefufui/.local/bin:$PATH
 export PYTHONPATH=/usr/bin/python
