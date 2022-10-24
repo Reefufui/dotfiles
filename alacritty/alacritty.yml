@@ -36,10 +36,6 @@ bell:
   duration: 200
   color: '#aaaaaa'
 
-  command:
-    program: notify-send
-    args: ["NYAAAGOOOOO"]
-
 cursor:
   style:
     shape: Underline

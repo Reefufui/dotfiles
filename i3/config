@@ -95,7 +95,7 @@ smart_gaps inverse_outer
 border_radius 20
 
 exec_always --no-startup-id --no-startup-id nitrogen --restore
-exec_always --no-startup-id picom
+# exec_always --no-startup-id picom
 exec_always --no-startup-id dunst
 exec_always --no-startup-id ~/.config/polybar/startpolybar
 
