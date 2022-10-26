@@ -11,6 +11,7 @@ alias la='exa --icons --all -l'
 alias tree='exa --icons --tree'
 alias tree2='exa --icons --tree --level=2'
 alias tree3='exa --icons --tree --level=3'
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
 
@@ -26,6 +27,10 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 export VULKAN_SDK=$HOME/vulkan/1.2.189.0/x86_64
 export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH

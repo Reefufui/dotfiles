@@ -17,16 +17,15 @@ window:
 
 font:
   normal:
-    family: Roboto Mono
-    style: Regular
+    family: Cascadia Code
   bold:
-    family: Roboto Mono
+    family: Cascadia Code
     style: Bold
   italic:
-    family: Roboto Mono
-    style: Regular Italic
+    family: Cascadia Mono
+    style: Italic
   bold_italic:
-    family: Roboto Mono
+    family: Cascadia Mono
     style: Bold Italic
 
   size: 13.4
