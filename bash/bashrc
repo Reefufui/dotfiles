@@ -12,6 +12,8 @@ alias tree='exa --icons --tree'
 alias tree2='exa --icons --tree --level=2'
 alias tree3='exa --icons --tree --level=3'
 
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+
 export VISUAL=vim
 export EDITOR=vim
 export MYVIMRC=$XDG_CONFIG_HOME/vim/vimrc
@@ -19,6 +21,11 @@ export VIMINIT='source $MYVIMRC'
 
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/config.toml
 export STARSHIP_CACHE=$XDG_CACHE_HOME/starship/cache
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 
 export VULKAN_SDK=$HOME/vulkan/1.2.189.0/x86_64
 export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
@@ -33,4 +40,3 @@ export PATH=$VULKAN_SDK/bin:$PATH
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
-. "$HOME/.cargo/env"
