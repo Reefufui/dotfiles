@@ -13,7 +13,7 @@ window:
     x: 10
     y: 10
   decorations: none
-  opacity: 1.0
+  opacity: 0.9
 
 font:
   normal:
