@@ -23,7 +23,6 @@ live-latex-preview/
 mimeapps.list
 neofetch/
 nitrogen/
-nvim/
 obs-studio/
 pavucontrol.ini
 pulse/
@@ -35,3 +34,4 @@ zathura/
 zoomus.conf
 
 4kdownload.com/
+vim/plugged

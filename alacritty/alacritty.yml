@@ -13,7 +13,7 @@ window:
     x: 10
     y: 10
   decorations: none
-  opacity: 0.9
+  opacity: 1.0
 
 font:
   normal:
@@ -48,8 +48,8 @@ cursor:
 shell:
   program: /bin/bash
   args:
-    - --login
-
+    - -l
+      #--rcfile /home/reefufui/.config/bash/bashrc
 mouse:
   hide_when_typing: true
 

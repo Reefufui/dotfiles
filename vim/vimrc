@@ -1,0 +1,68 @@
+set runtimepath^=$XDG_CONFIG_HOME/vim
+set runtimepath+=$XDG_DATA_HOME/vim
+set runtimepath+=$XDG_CONFIG_HOME/vim/after
+
+set packpath^=$XDG_DATA_HOME/vim,$XDG_CONFIG_HOME/vim
+set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
+
+let g:netrw_home = $XDG_DATA_HOME."/vim"
+call mkdir($XDG_DATA_HOME."/vim/spell", 'p')
+
+set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
+set directory=$XDG_STATE_HOME/vim/swap   | call mkdir(&directory, 'p')
+set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p')
+set viewdir=$XDG_STATE_HOME/vim/view     | call mkdir(&viewdir,   'p')
+
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
+
+let data_dir = $XDG_CONFIG_HOME.'/vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin(data_dir . '/plugged')
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
+Plug 'mboughaba/i3config.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'junegunn/goyo.vim'
+call plug#end()
+
+set encoding=utf-8
+set termguicolors
+
+colorscheme catppuccin_mocha
+
+set expandtab
+set shiftwidth=4
+set tabstop=4
+
+set wildmode=longest,list,full
+set number relativenumber
+set list
+set listchars=tab:→\ ,trail:.
+set ignorecase
+set hlsearch
+
+syntax enable
+filetype plugin indent on
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-l>"
+
+autocmd FileType make setlocal noexpandtab
+
+let mapleader = " "
+
+map j gj
+map k gk
+map <leader>o :setlocal spell! spelllang=en_us<CR>
+map <leader>g :Goyo<CR>
+map <C-v> "+P
+vnoremap <C-c> "+y
+

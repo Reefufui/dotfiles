@@ -1,36 +1,36 @@
-# User info
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
 export USERNAME="Treefonov Andrey"
 export NICKNAME="Reefufui"
 
-# Default choice TODO nvim -> vim
-export VISUAL=nvim
-export EDITOR=nvim
-
-# Aliases
 alias ls='exa --icons --all'
 alias la='exa --icons --all -l'
 alias tree='exa --icons --tree'
 alias tree2='exa --icons --tree --level=2'
 alias tree3='exa --icons --tree --level=3'
 
-export STARSHIP_CONFIG=~/.config/starship/config.toml
-export STARSHIP_CACHE=~/.cache/starship/cache
-eval "$(starship init bash)"
-eval "$(zoxide init bash)"
+export VISUAL=vim
+export EDITOR=vim
+export MYVIMRC=$XDG_CONFIG_HOME/vim/vimrc
+export VIMINIT='source $MYVIMRC'
 
-# My scripts path
-export PATH=/home/reefufui/.scripts:$PATH
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/config.toml
+export STARSHIP_CACHE=$XDG_CACHE_HOME/starship/cache
 
-# Python dev paths
-export PATH=/home/reefufui/.local/bin:$PATH
-export PYTHONPATH=/usr/bin/python
-
-# Vulkan dev paths
-export VULKAN_SDK=~/vulkan/1.2.189.0/x86_64
-export PATH=$VULKAN_SDK/bin:$PATH
+export VULKAN_SDK=$HOME/vulkan/1.2.189.0/x86_64
 export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
 export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
 
-# Rust env vars
-. "$HOME/.cargo/env"
+export PYTHONPATH=/usr/bin/python
 
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.scripts:$PATH
+export PATH=$VULKAN_SDK/bin:$PATH
+
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
+
+. "$HOME/.cargo/env"
