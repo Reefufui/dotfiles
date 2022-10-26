@@ -292,42 +292,96 @@ keybinds clear-defaults=true {
     }
 }
 
-// Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
-// eg. when terminal window with an active zellij session is closed
-// Options:
-//   - detach (Default)
-//   - quit
-//
-// on_force_close "quit"
-
-// Send a request for a simplified ui (without arrow fonts) to plugins
-// Options:
-//   - true
-//   - false (Default)
-//
-// simplified_ui true
-
-// Choose the path to the default shell that zellij will use for opening new panes
-// Default: $SHELL
-//
+on_force_close "detach"
+simplified_ui false
 default_shell "bash"
-
-// Toggle between having pane frames around the panes
-// Options:
-//   - true (default)
-//   - false
-//
 pane_frames false
-
-// Choose the theme that is specified in the themes section.
-// Default: default
-//
+themes {
+    catppuccin-frappe {
+        fg 198 208 245
+            bg 98 104 128
+            black 41 44 60
+            red 231 130 132
+            green 166 209 137
+            yellow 229 200 144
+            blue 140 170 238
+            magenta 244 184 228
+            cyan 153 209 219
+            white 198 208 245
+            orange 239 159 118
+    }
+    catppuccin-latte {
+        fg 172 176 190
+            bg 172 176 190
+            black 76 79 105
+            red 210 15 57
+            green 64 160 43
+            yellow 223 142 29
+            blue 30 102 245
+            magenta 234 118 203
+            cyan 4 165 229
+            white 220 224 232
+            orange 254 100 11
+    }
+    catppuccin-macchiato {
+        fg 202 211 245
+            bg 91 96 120
+            black 30 32 48
+            red 237 135 150
+            green 166 218 149
+            yellow 238 212 159
+            blue 138 173 244
+            magenta 245 189 230
+            cyan 145 215 227
+            white 202 211 245
+            orange 245 169 127
+    }
+    catppuccin-mocha {
+        fg 205 214 244
+            bg 88 91 112
+            black 24 24 37
+            red 243 139 168
+            green 166 227 161
+            yellow 249 226 175
+            blue 137 180 250
+            magenta 245 194 231
+            cyan 137 220 235
+            white 205 214 244
+            orange 250 179 135
+    }
+    dracula {
+        fg 248 248 242
+            bg 40 42 54
+            black 0 0 0
+            red 255 85 85
+            green 80 250 123
+            yellow 241 250 140
+            blue 98 114 164
+            magenta 255 121 198
+            cyan 139 233 253
+            white 255 255 255
+            orange 255 184 108
+    }
+    nord {
+        fg "#D8DEE9"
+        bg "#2E3440"
+        black "#3B4252"
+        red "#BF616A"
+        green "#A3BE8C"
+        yellow "#EBCB8B"
+        blue "#81A1C1"
+        magenta "#B48EAD"
+        cyan "#88C0D0"
+        white "#E5E9F0"
+        orange "#D08770"
+    }
+}
 theme "catppuccin-mocha"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -391,13 +445,16 @@ theme "catppuccin-mocha"
 //
 // layout_dir /path/to/my/layout_dir
 
-// The folder in which Zellij will look for themes
-//
-// theme_dir "/path/to/my/theme_dir"
-
 plugins {
     tab-bar { path "tab-bar"; }
     status-bar { path "status-bar"; }
     strider { path "strider"; }
     compact-bar { path "compact-bar"; }
 }
+
+ui {
+    pane_frames {
+        rounded_corners true
+    }
+}
+
