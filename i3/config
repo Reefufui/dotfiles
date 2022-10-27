@@ -84,6 +84,7 @@ for_window [class="pulseaudio"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Vulkan"] floating enable
 for_window [class="qView"] floating enable
+for_window [class="feh"] floating enable
 for_window [class="Steam"] floating enable
 
 for_window [class="^.*"] border pixel 0

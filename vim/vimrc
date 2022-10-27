@@ -72,8 +72,7 @@ command! MakeTags !ctags -R .
 map j gj
 map k gk
 
-" Copy/Paste from desktop ("+ requires gvim installed)
-map <C-v> "+P
+" Copy from desktop ("+ requires gvim installed)
 vnoremap <C-c> "+y
 
 let mapleader = " "
