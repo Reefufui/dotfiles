@@ -69,13 +69,17 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 autocmd FileType make setlocal noexpandtab
 command! MakeTags !ctags -R .
 
-let mapleader = " "
-
 map j gj
 map k gk
-nnoremap <leader>o :setlocal spell! spelllang=en_us<CR>
-nnoremap <leader>g :Goyo<CR>
-" "+ requires gvim installed
+
+" Copy/Paste from desktop ("+ requires gvim installed)
 map <C-v> "+P
 vnoremap <C-c> "+y
+
+let mapleader = " "
+nnoremap <leader>o :setlocal spell! spelllang=en_us<CR>
+nnoremap <leader>g :Goyo<CR>
+nnoremap <leader>h :bnext<CR>
+nnoremap <leader>l :bprevious<CR>
+nnoremap <leader>e :enew<CR>
 
