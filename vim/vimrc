@@ -27,12 +27,14 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'mboughaba/i3config.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'imsnif/kdl.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 call plug#end()
 
+set nocompatible
 set encoding=utf-8
 set termguicolors
 
@@ -43,9 +45,10 @@ set shiftwidth=4
 set tabstop=4
 
 set wildmode=longest,list,full
+set path+=**
 set number relativenumber
 set list
-set listchars=tab:→\ ,trail:.
+set listchars=tab:→\ ,trail:·
 set ignorecase
 set hlsearch
 
@@ -53,16 +56,26 @@ syntax enable
 filetype plugin indent on
 
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 autocmd FileType make setlocal noexpandtab
+command! MakeTags !ctags -R .
 
 let mapleader = " "
 
 map j gj
 map k gk
-map <leader>o :setlocal spell! spelllang=en_us<CR>
-map <leader>g :Goyo<CR>
+nnoremap <leader>o :setlocal spell! spelllang=en_us<CR>
+nnoremap <leader>g :Goyo<CR>
+" "+ requires gvim installed
 map <C-v> "+P
 vnoremap <C-c> "+y
 
