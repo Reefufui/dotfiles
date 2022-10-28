@@ -1,0 +1,9 @@
+autocmd FileType rust nnoremap <leader>s :tabedit ~/.config/vim/snippets/rust.snippets<cr>
+
+autocmd FileType rust inoremap <tab>f fn ···(···) ···{<cr>···<cr>}<esc>%^i
+autocmd FileType rust inoremap <tab>p println!(""···);<esc>F"ci"
+autocmd FileType rust inoremap <tab>d dbg!();<esc>F)ci(
+autocmd FileType rust inoremap <c-t> #[cfg(test)]<cr>mod tests {<cr>use super::;<cr><cr>···<cr>}<esc>%jf;i
+autocmd FileType rust inoremap <tab>t #[test]<cr>fn _test() {<cr>···<cr>}<esc>%F_i
+autocmd FileType rust inoremap <tab>a assert_eq!(, ···);<esc>F(a
+
