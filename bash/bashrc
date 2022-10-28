@@ -6,11 +6,11 @@ export XDG_CACHE_HOME=$HOME/.cache
 export USERNAME="Treefonov Andrey"
 export NICKNAME="Reefufui"
 
-alias ls='exa --icons --all'
-alias la='exa --icons --all -l'
-alias tree='exa --icons --tree'
-alias tree2='exa --icons --tree --level=2'
-alias tree3='exa --icons --tree --level=3'
+alias ls='exa --all'
+alias la='exa --all -l'
+alias tree='exa --tree'
+alias tree2='exa --tree --level=2'
+alias tree3='exa --tree --level=3'
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
