@@ -29,8 +29,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'imsnif/kdl.vim'
 
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 call plug#end()
 
@@ -54,10 +52,6 @@ set hlsearch
 
 syntax enable
 filetype plugin indent on
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:netrw_banner=0
 let g:netrw_browse_split=4
