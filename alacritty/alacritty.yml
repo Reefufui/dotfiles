@@ -12,7 +12,6 @@ window:
   padding:
     x: 10
     y: 10
-  decorations: none
   opacity: 1.0
 
 font:
