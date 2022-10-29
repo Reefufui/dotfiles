@@ -30,6 +30,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'imsnif/kdl.vim'
 
 Plug 'junegunn/goyo.vim'
+Plug 'kshenoy/vim-signature'
 call plug#end()
 
 set nocompatible
@@ -38,18 +39,13 @@ set termguicolors
 set t_Co=256
 colorscheme catppuccin_mocha
 
-set expandtab
-set shiftwidth=4
-set tabstop=4
+set expandtab shiftwidth=4 tabstop=4
 
-set wildmode=longest,list,full
-set path+=**
+set wildmode=longest,list,full path+=**
 set number relativenumber
 set list
 set listchars=tab:→\ ,trail:·
-set ignorecase
-set smartcase
-set hlsearch
+set hlsearch ignorecase smartcase
 
 syntax enable
 filetype plugin indent on
@@ -79,6 +75,7 @@ nnoremap <leader>e :enew<cr>
 nnoremap <leader>x :bd<cr>
 nnoremap <leader>b :Lex<cr>:vertical resize 30 <cr>
 nnoremap <leader>m a···<esc>3h
+nnoremap <leader>n :set number! relativenumber!<cr>
 
 nnoremap <tab><tab> <esc>/···<enter>"_c3l
 inoremap <tab><tab> <esc>/···<enter>"_c3l
