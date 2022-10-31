@@ -17,7 +17,6 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 bindsym $mod+f fullscreen toggle
-bindsym $mod+s layout stacked
 bindsym $mod+e layout toggle split
 bindsym $mod+w sticky toggle
 bindsym $mod+Shift+space floating toggle
