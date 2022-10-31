@@ -1,0 +1,5 @@
+autocmd FileType bash nnoremap <leader>s :tabedit ~/.config/vim/snippets/bash.snippets<cr>
+autocmd BufNewFile,BufRead *.sh :set filetype=bash
+
+autocmd FileType bash inoremap <tab>i if [ @ ]; then<cr>···<cr>fi<esc>kkf@ciw
+

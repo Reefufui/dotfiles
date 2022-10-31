@@ -30,25 +30,22 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'imsnif/kdl.vim'
 
 Plug 'junegunn/goyo.vim'
+Plug 'kshenoy/vim-signature'
 call plug#end()
 
 set nocompatible
 set encoding=utf-8
 set termguicolors
-
+set t_Co=256
 colorscheme catppuccin_mocha
 
-set expandtab
-set shiftwidth=4
-set tabstop=4
+set expandtab shiftwidth=4 tabstop=4
 
-set wildmode=longest,list,full
-set path+=**
+set wildmode=longest,list,full path+=**
 set number relativenumber
 set list
 set listchars=tab:→\ ,trail:·
-set ignorecase
-set hlsearch
+set hlsearch ignorecase smartcase
 
 syntax enable
 filetype plugin indent on
@@ -67,12 +64,26 @@ map j gj
 map k gk
 
 " Copy from desktop ("+ requires gvim installed)
-vnoremap <C-c> "+y
+vnoremap <c-c> "+y
 
 let mapleader = " "
-nnoremap <leader>o :setlocal spell! spelllang=en_us<CR>
-nnoremap <leader>g :Goyo<CR>
-nnoremap <leader>h :bnext<CR>
-nnoremap <leader>l :bprevious<CR>
-nnoremap <leader>e :enew<CR>
+nnoremap <leader>o :setlocal spell! spelllang=en_us<cr>
+nnoremap <leader>g :Goyo<cr>
+nnoremap <leader>h :bnext<cr>
+nnoremap <leader>l :bprevious<cr>
+nnoremap <leader>e :enew<cr>
+nnoremap <leader>x :bd<cr>
+nnoremap <leader>b :Lex<cr>:vertical resize 30 <cr>
+nnoremap <leader>m a···<esc>3h
+nnoremap <leader>n :set number! relativenumber!<cr>
+
+nnoremap <tab><tab> <esc>/···<enter>"_c3l
+inoremap <tab><tab> <esc>/···<enter>"_c3l
+
+source ~/.config/vim/snippets/rust.snippets
+source ~/.config/vim/snippets/cpp.snippets
+source ~/.config/vim/snippets/bash.snippets
+autocmd BufNewFile,BufRead *.snippets :set filetype=vim
+
+inoremap <c-l> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
