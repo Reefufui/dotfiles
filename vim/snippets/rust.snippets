@@ -1,9 +1,15 @@
 autocmd FileType rust nnoremap <leader>s :tabedit ~/.config/vim/snippets/rust.snippets<cr>
 
-autocmd FileType rust inoremap <tab>f fn ···(···) ···{<cr>···<cr>}<esc>%^i
+autocmd FileType rust inoremap <c-f> fn ···(···) ···{<cr>···<cr>}<esc>%^i
+autocmd FileType rust inoremap <c-t> #[cfg(test)]<cr>mod tests {<cr>use super::;<cr><cr>···<cr>}<esc>%jf;i
+
 autocmd FileType rust inoremap <tab>p println!(""···);<esc>F"ci"
 autocmd FileType rust inoremap <tab>d dbg!();<esc>F)ci(
-autocmd FileType rust inoremap <c-t> #[cfg(test)]<cr>mod tests {<cr>use super::;<cr><cr>···<cr>}<esc>%jf;i
 autocmd FileType rust inoremap <tab>t #[test]<cr>fn _test() {<cr>···<cr>}<esc>%F_i
 autocmd FileType rust inoremap <tab>a assert_eq!(, ···);<esc>F(a
-
+autocmd FileType rust inoremap <tab>s thread::spawn(move \|\| {<cr>···<cr>})<cr>···<esc>k^%F(lv4l
+autocmd FileType rust inoremap <tab>" String::from("")···<esc>F"i
+autocmd FileType rust inoremap <tab>v vec![<cr>]···<esc>ko
+autocmd FileType rust inoremap <tab>f for x in ··· {<cr>···<cr>}<esc>%Fxciw
+autocmd FileType rust inoremap <tab>m Mutex::new()···<esc>F(ci(
+autocmd FileType rust inoremap <tab>l let mut ··· = ···;<esc>Fmvwh
