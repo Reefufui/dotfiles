@@ -1,3 +1,6 @@
 [submodule "alacritty/catppuccin"]
 	path = alacritty/catppuccin
 	url = git@github.com:catppuccin/alacritty.git
+[submodule "ranger/plugins/ranger_devicons"]
+	path = ranger/plugins/ranger_devicons
+	url = git@github.com:Reefufui/ranger_devicons_extended.git
