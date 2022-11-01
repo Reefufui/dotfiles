@@ -2,6 +2,15 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
+export XDG_TEMPLATES_DIR="$HOME/templates"
+export XDG_DOCUMENTS_DIR="$HOME/documents"
+export XDG_MUSIC_DIR="$HOME/music"
+export XDG_PICTURES_DIR="$HOME/images"
+export XDG_VIDEOS_DIR="$HOME/videos"
+
+export MY_DEVELOPMENT_DIR="$HOME/dev"
+export MY_WALLPAPERS_DIR="$HOME/wallpapers"
 
 export USERNAME="Treefonov Andrey"
 export NICKNAME="Reefufui"
@@ -11,6 +20,11 @@ alias la='exa --icons --all -l'
 alias tree='exa --icons --tree'
 alias tree2='exa --icons --tree --level=2'
 alias tree3='exa --icons --tree --level=3'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gd='git diff'
+alias gs='git status'
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
@@ -32,7 +46,7 @@ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
 export LESSHISTFILE="$XDG_STATE_HOME"/less/history
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
-export VULKAN_SDK=$HOME/vulkan/1.2.189.0/x86_64
+export VULKAN_SDK=/opt/vulkan/1.2.189.0/x86_64
 export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
 export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
 
