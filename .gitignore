@@ -30,6 +30,10 @@ tpnote/
 vlc/
 zathura/
 zoomus.conf
+handlr/
+nushell/
+ipython/
+pki/
 
 4kdownload.com/
 vim/plugged

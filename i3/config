@@ -96,6 +96,6 @@ border_radius 10
 
 exec_always --no-startup-id dunst
 exec_always --no-startup-id ~/.config/polybar/startpolybar
-exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id ~/.local/bin/fehbg
 exec_always --no-startup-id picom --experimental-backends
 
