@@ -53,7 +53,6 @@ export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
 export PYTHONPATH=/usr/bin/python
 
 export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.scripts:$PATH
 export PATH=$VULKAN_SDK/bin:$PATH
 export PATH=$CARGO_HOME/bin:$PATH
 

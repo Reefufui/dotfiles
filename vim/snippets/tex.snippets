@@ -1,0 +1,5 @@
+autocmd FileType tex nnoremap <leader>s :tabedit ~/.config/vim/snippets/tex.snippets<cr>
+autocmd BufWritePost *.tex :!make
+
+autocmd FileType tex inoremap <tab>f \begin{figure}<cr>\centering<cr>···<cr>\caption{\label{fig:···}···}<cr>\end{figure}<esc>3k$vk
+autocmd FileType tex inoremap <tab>i \includegraphics[width=0.3\textwidth]{···}<esc>F0vll

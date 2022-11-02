@@ -31,6 +31,8 @@ Plug 'imsnif/kdl.vim'
 
 Plug 'junegunn/goyo.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'tpope/vim-speeddating'
 call plug#end()
 
 set nocompatible
@@ -42,6 +44,7 @@ colorscheme catppuccin_mocha
 set expandtab shiftwidth=4 tabstop=4
 
 set wildmode=longest,list,full path+=**
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set number relativenumber
 set list
 set listchars=tab:→\ ,trail:·
@@ -56,6 +59,9 @@ let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_keepdir = 0
+let g:ranger_map_keys = 0
+let g:ranger_replace_netrw = 1
 
 autocmd FileType make setlocal noexpandtab
 command! MakeTags !ctags -R .
@@ -67,6 +73,15 @@ map k gk
 vnoremap <c-c> "+y
 
 let mapleader = " "
+nnoremap <leader>1 :1tabnext<CR>
+nnoremap <leader>2 :2tabnext<CR>
+nnoremap <leader>3 :3tabnext<CR>
+nnoremap <leader>4 :4tabnext<CR>
+nnoremap <leader>5 :5tabnext<CR>
+nnoremap <leader>6 :6tabnext<CR>
+nnoremap <leader>7 :7tabnext<CR>
+nnoremap <leader>8 :8tabnext<CR>
+nnoremap <leader>9 :9tabnext<CR>
 nnoremap <leader>o :setlocal spell! spelllang=en_us<cr>
 nnoremap <leader>g :Goyo<cr>
 nnoremap <leader>h :bnext<cr>
@@ -78,6 +93,8 @@ nnoremap <leader>m a···<esc>3h
 nnoremap <leader>n :set number! relativenumber!<cr>
 nnoremap <leader>c :tabedit ~/.config/vim/vimrc<cr>
 nnoremap <leader>w :!rm ~/.local/state/vim/swap/*.swp
+nnoremap <leader>f :RangerWorkingDirectory<cr>
+nnoremap <leader>t :RangerWorkingDirectoryNewTab<cr>
 
 nnoremap <tab><tab> <esc>h/···<enter>"_c3l
 inoremap <tab><tab> <esc>h/···<enter>"_c3l
@@ -86,6 +103,7 @@ vnoremap <tab><tab> <esc>h/···<enter>"_c3l
 source ~/.config/vim/snippets/rust.snippets
 source ~/.config/vim/snippets/cpp.snippets
 source ~/.config/vim/snippets/bash.snippets
+source ~/.config/vim/snippets/tex.snippets
 autocmd BufNewFile,BufRead *.snippets :set filetype=vim
 
 inoremap <c-l> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

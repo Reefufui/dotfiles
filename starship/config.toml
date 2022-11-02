@@ -1,5 +1,10 @@
 # Inserts a blank line between shell prompts
 add_newline = false
+format = """$directory$all$character"""
+
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[❯](bold cyan)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[❯](bold red) " # ✖
 
 # Disable the package module, hiding it from the prompt completely
 [package]
