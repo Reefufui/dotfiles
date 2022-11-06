@@ -1,1 +1,13 @@
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+configuration{
+    modi: "drun,run,window";
+    lines: 5;
+    show-icons: true;
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+}
+
+@theme "catppuccin_mocha"
+
