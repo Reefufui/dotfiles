@@ -9,6 +9,9 @@ import:
 draw_bold_text_with_bright_colors: true
 
 window:
+
+  columns: 120
+  lines: 30
   padding:
     x: 10
     y: 10

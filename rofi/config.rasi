@@ -1,5 +1,5 @@
 configuration{
-    modi: "drun,run,window";
+    modi: "run";
     lines: 5;
     show-icons: true;
     terminal: "alacritty";

@@ -8,10 +8,10 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left 256px
+bindsym $mod+Shift+j move down 256px
+bindsym $mod+Shift+k move up 256px
+bindsym $mod+Shift+l move right 256px
 
 bindsym $mod+f fullscreen toggle
 bindsym $mod+e layout toggle split
@@ -51,14 +51,16 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-
 workspace_auto_back_and_forth yes
 
+bindsym $mod+plus resize grow height 256 px; resize grow width 256 px
+bindsym $mod+minus resize shrink height 256 px; resize shrink width 256 px
+
 mode "resize" {
-    bindsym h resize shrink width 128 px
-    bindsym j resize grow height 128 px
-    bindsym k resize shrink height 128 px
-    bindsym l resize grow width 128 px
+    bindsym h resize shrink width 256 px
+    bindsym j resize grow height 256 px
+    bindsym k resize shrink height 256 px
+    bindsym l resize grow width 256 px
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+r mode "default"
