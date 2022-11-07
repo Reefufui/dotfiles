@@ -1,24 +1,6 @@
 # i3 config file (v4)
 
 set $mod Mod4
-
-floating_modifier $mod
-
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Shift+h move left 256px
-bindsym $mod+Shift+j move down 256px
-bindsym $mod+Shift+k move up 256px
-bindsym $mod+Shift+l move right 256px
-
-bindsym $mod+f fullscreen toggle
-bindsym $mod+e layout toggle split
-bindsym $mod+w sticky toggle
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -29,32 +11,18 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $terminal alacritty --config-file ~/.config/alacritty/alacritty.yml
+set $screenshot flameshot gui
+set $launcher rofi -show run -normal-window -show-icons
+set $lock ~/.local/bin/screen_lock
 
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
-
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+floating_modifier $mod
 workspace_auto_back_and_forth yes
-
-bindsym $mod+plus resize grow height 256 px; resize grow width 256 px
-bindsym $mod+minus resize shrink height 256 px; resize shrink width 256 px
+gaps inner 13
+gaps outer 0
+smart_gaps inverse_outer
+# border_radius requires https://github.com/resloved/i3
+border_radius 10
 
 mode "resize" {
     bindsym h resize shrink width 256 px
@@ -66,20 +34,60 @@ mode "resize" {
     bindsym $mod+r mode "default"
 }
 
-bindsym $mod+Shift+q kill
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Rly?' -B 'Exit i3' 'i3-msg exit'"
-
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+bindsym $mod+minus resize shrink height 256 px; resize shrink width 256 px
+bindsym $mod+plus resize grow height 256 px; resize grow width 256 px
+bindsym $mod+BackSpace exec --no-startup-id $lock && systemctl suspend
+bindsym $mod+w sticky toggle
 bindsym $mod+r mode "resize"
-bindsym $mod+Return exec alacritty --config-file ~/.config/alacritty/alacritty.yml
-bindsym $mod+d      exec --no-startup-id rofi -show run -normal-window -show-icons
-bindsym $mod+p      exec --no-startup-id flameshot gui
+bindsym $mod+p exec $screenshot
+bindsym $mod+d exec $launcher
+bindsym $mod+f fullscreen toggle
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Return exec $terminal
+bindsym $mod+c move position center
+bindsym $mod+v split v
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Escape exec $lock
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+minus resize shrink height 64 px; resize shrink width 64 px
+bindsym $mod+Shift+plus resize grow height 64 px; resize grow width 64 px
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Rly?' -B 'Yes' 'i3-msg exit'"
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+v split h
+bindsym $mod+Shift+h move left 256px
+bindsym $mod+Shift+j move down 256px
+bindsym $mod+Shift+k move up 256px
+bindsym $mod+Shift+l move right 256px
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+space floating toggle
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="About"] floating enable
-
 for_window [class="pulseaudio"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Vulkan"] floating enable
@@ -87,16 +95,10 @@ for_window [class="qView"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="Rofi"] floating enable
-
 for_window [class=".*"] border pixel 0
-# gaps requires https://github.com/Airblader/i3 | https://github.com/resloved/i3
-gaps inner 13
-gaps outer 0
-smart_gaps inverse_outer
-# border_radius requires https://github.com/resloved/i3
-border_radius 10
 
 exec_always --no-startup-id dunst
+exec_always --no-startup-id caffeine
 exec_always --no-startup-id ~/.config/polybar/startpolybar
 exec_always --no-startup-id ~/.local/bin/fehbg
 exec_always --no-startup-id picom --experimental-backends
