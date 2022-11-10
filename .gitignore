@@ -34,6 +34,7 @@ handlr/
 nushell/
 ipython/
 pki/
+transmission-cli/
 
 4kdownload.com/
 vim/plugged
@@ -41,3 +42,4 @@ jupyter/
 caffeine/
 bottom/
 aseprite
+transmission-daemon/
