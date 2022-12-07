@@ -95,6 +95,7 @@ for_window [class="qView"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Steam"] floating enable
 for_window [class="Rofi"] floating enable
+for_window [class="*_sandbox"] floating enable
 for_window [class=".*"] border pixel 0
 
 exec_always --no-startup-id dunst
@@ -102,5 +103,5 @@ exec_always --no-startup-id caffeine
 exec_always --no-startup-id transmission-daemon
 exec_always --no-startup-id ~/.config/polybar/startpolybar
 exec_always --no-startup-id ~/.local/bin/fehbg
-exec_always --no-startup-id picom --experimental-backends
+exec_always --no-startup-id picom
 
